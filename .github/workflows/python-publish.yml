@@ -35,7 +35,7 @@ jobs:
       run: python -m build
     - name: Publish package
       env:
-        user: __token__
+        user: ferie24
         password: ${{ secrets.PYPI_API_TOKEN }}
       run: python3 -m twine upload --repository testpypi dist/* --verbose
       
