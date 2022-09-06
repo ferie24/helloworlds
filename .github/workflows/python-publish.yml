@@ -33,9 +33,9 @@ jobs:
         pip install twine
     - name: Build package
       run: python -m build
-    - name: Publish package
+    - name: Publish to PyPI Test
       env:
-        user: ferie24
-        password: ${{ secrets.PYPI_API_TOKEN }}
-      run: python3 -m twine upload --repository testpypi dist/* --verbose
+        TWINE_USERNAME: ferie24
+        TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+      run: twine upload --repository testpypi dist/* #--skip-existing
       
