@@ -34,8 +34,5 @@ jobs:
     - name: Build package
       run: python -m build
     - name: Publish to PyPI Test
-      env:
-        TWINE_USERNAME: ferie24
-        TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
-      run: twine upload --repository testpypi dist/* #--skip-existing
+      run: twine upload -u ferie24 -p IchmaggerneKekse -repository-url https://test.pypi.org/legacy/ dist/*
       
