@@ -34,5 +34,5 @@ jobs:
     - name: Build package
       run: python -m build
     - name: Publish to PyPI Test
-      run: twine upload -u ferie24 -p IchmaggerneKekse --repository-url https://test.pypi.org/legacy/ dist/*
+      run: twine upload -u ferie24 -p {{github.testpypipass}} --repository-url https://test.pypi.org/legacy/ dist/*
       
